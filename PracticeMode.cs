@@ -368,8 +368,8 @@ namespace MatchZy
                 }
 
                 // Define the file path
-                string savednadesfileName = "MatchZy/savednades.json";
-                string savednadesPath = Path.Join(Server.GameDirectory + "/csgo/cfg", savednadesfileName);
+                string savednadesfileName = "matchzytestannotation.json";
+                string savednadesPath = Path.Join(Server.GameDirectory + "/csgo/annotations", savednadesfileName);
 
                 try
                 {
@@ -449,8 +449,8 @@ namespace MatchZy
                         string currentMapName = Server.MapName;
 
                         // Define the file path
-                        string savednadesfileName = "MatchZy/savednades.json";
-                        string savednadesPath = Path.Join(Server.GameDirectory + "/csgo/cfg", savednadesfileName);
+                        string savednadesfileName = "matchzytestannotation.json";
+                        string savednadesPath = Path.Join(Server.GameDirectory + "/csgo/annotations", savednadesfileName);
 
                         // Read existing JSON content
                         string existingJson = File.ReadAllText(savednadesPath);
@@ -520,7 +520,7 @@ namespace MatchZy
             if (!isPractice || player == null) return;
 
             // Define the file path
-            string savednadesfileName = "MatchZy/savednades.json";
+            string savednadesfileName = "Test.json";
             string savednadesPath = Path.Join(Server.GameDirectory + "/csgo/cfg", savednadesfileName);
 
             try
@@ -582,8 +582,8 @@ namespace MatchZy
                 string playerSteamID = player.SteamID.ToString();
 
                 // Define the file path
-                string savednadesfileName = "MatchZy/savednades.json";
-                string savednadesPath = Path.Join(Server.GameDirectory + "/csgo/cfg", savednadesfileName);
+                string savednadesfileName = "matchzytestannotation.json";
+                string savednadesPath = Path.Join(Server.GameDirectory + "/csgo/annotations", savednadesfileName);
 
                 try
                 {
