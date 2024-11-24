@@ -283,8 +283,8 @@ namespace MatchZy
                 string nadeType = GetNadeType(player.PlayerPawn.Value.WeaponServices!.ActiveWeapon.Value!.DesignerName);
 
                 // Define the file path
-                string savednadesfileName = "MatchZy/savednades.json";
-                string savednadesPath = Path.Join(Server.GameDirectory + "/csgo/cfg", savednadesfileName);
+                string savednadesfileName = "matchzytestannotation.json";
+                string savednadesPath = Path.Join(Server.GameDirectory + "/csgo/annotations", savednadesfileName);
 
                 // Check if the file exists, if not, create it with an empty JSON object
                 if (!File.Exists(savednadesPath))
