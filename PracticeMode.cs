@@ -289,7 +289,7 @@ namespace MatchZy
                 // Check if the file exists, if not, create it with an empty JSON object
                 if (!File.Exists(savednadesPath))
                 {
-                    File.WriteAllText(savednadesPath, "{}");
+                    File.WriteAllText(savednadesPath, "<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->\n{}");
                 }
 
                 try
@@ -322,8 +322,8 @@ namespace MatchZy
 
                     savedNadesDict[playerSteamID][lineupName] = new Dictionary<string, string>
                     {
-                        { "LineupPos", $"{playerPos.X} {playerPos.Y} {playerPos.Z+4}" },
-                        { "LineupAng", $"{playerAngle.X} {playerAngle.Y} {playerAngle.Z}" },
+                        { "Position", $"{playerPos.X} {playerPos.Y} {playerPos.Z+4}" },
+                        { "Angles", $"{playerAngle.X} {playerAngle.Y} {playerAngle.Z}" },
                         { "Desc", lineupDesc },
                         { "Map", currentMapName },
                         { "Type", nadeType }
@@ -484,8 +484,8 @@ namespace MatchZy
 
                         savedNadesDict[playerSteamID][lineupName] = new Dictionary<string, string>
                         {
-                            { "LineupPos", $"{posAng[0]} {posAng[1]} {posAng[2]}" },
-                            { "LineupAng", $"{posAng[3]} {posAng[4]} {posAng[5]}" },
+                            { "Position", $"{posAng[0]} {posAng[1]} {posAng[2]}" },
+                            { "Angles", $"{posAng[3]} {posAng[4]} {posAng[5]}" },
                             { "Desc", "" },
                             { "Map", currentMapName }
                         };
@@ -625,8 +625,8 @@ namespace MatchZy
                                 if (lineupInfo.ContainsKey("Map") && lineupInfo["Map"] == Server.MapName)
                                 {
                                     // Extract position and angle from the lineup information
-                                    string[] posArray = lineupInfo["LineupPos"].Split(' ');
-                                    string[] angArray = lineupInfo["LineupAng"].Split(' ');
+                                    string[] posArray = lineupInfo["Position"].Split(' ');
+                                    string[] angArray = lineupInfo["Angles"].Split(' ');
 
                                     // Parse position and angle
                                     Vector loadedPlayerPos = new Vector(float.Parse(posArray[0]), float.Parse(posArray[1]), float.Parse(posArray[2]));
