@@ -283,7 +283,7 @@ namespace MatchZy
                 string nadeType = GetNadeType(player.PlayerPawn.Value.WeaponServices!.ActiveWeapon.Value!.DesignerName);
 
                 // Define the file path
-                string savednadesfileName = currentMapName + "matchzytestannotation.json";
+                string savednadesfileName = currentMapName + "matchzytestannotation.txt";
                 string savednadesPath = Path.Join(Server.GameDirectory + "/csgo/annotations", savednadesfileName);
 
                 // Check if the file exists, if not, create it with an empty JSON object
@@ -366,9 +366,11 @@ namespace MatchZy
                 {
                     playerSteamID = "default";
                 }
-
+                
+                string currentMapName = Server.MapName;
+                
                 // Define the file path
-                string savednadesfileName = "matchzytestannotation.json";
+                string savednadesfileName = currentMapName + "matchzytestannotation.json";
                 string savednadesPath = Path.Join(Server.GameDirectory + "/csgo/annotations", savednadesfileName);
 
                 try
@@ -449,7 +451,7 @@ namespace MatchZy
                         string currentMapName = Server.MapName;
 
                         // Define the file path
-                        string savednadesfileName = "matchzytestannotation.json";
+                        string savednadesfileName = currentMapName + "matchzytestannotation.json";
                         string savednadesPath = Path.Join(Server.GameDirectory + "/csgo/annotations", savednadesfileName);
 
                         // Read existing JSON content
@@ -581,8 +583,10 @@ namespace MatchZy
                 // Get player info: steamid
                 string playerSteamID = player.SteamID.ToString();
 
+                string currentMapName = Server.MapName;
+
                 // Define the file path
-                string savednadesfileName = "matchzytestannotation.json";
+                string savednadesfileName = currentMapName + "matchzytestannotation.json";
                 string savednadesPath = Path.Join(Server.GameDirectory + "/csgo/annotations", savednadesfileName);
 
                 try
